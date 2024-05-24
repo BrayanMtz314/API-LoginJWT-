@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-    @GetMapping(value ="{id}")
+    @GetMapping(value ="/id/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Integer id){
         UserDTO userDTO = userService.getUser(id);
         if(userDTO == null){
@@ -21,8 +21,8 @@ public class UserController {
         return ResponseEntity.ok(userDTO);
     }
 
-    @GetMapping(value ="{username}")
-    public ResponseEntity<UserDTO> getUser(@PathVariable String username){
+    @GetMapping(value ="/username/{username}")
+    public ResponseEntity<UserDTO> getUserByUsername(@PathVariable String username){
         UserDTO userDTO = userService.getUseByUsername(username);
         if(userDTO == null){
             return ResponseEntity.notFound().build();
