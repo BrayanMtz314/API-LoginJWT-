@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/v1/user")
 @RequiredArgsConstructor
@@ -35,4 +37,11 @@ public class UserController {
     public ResponseEntity<UserResponse> updateUser(@RequestBody UserRequest userRequest){
         return ResponseEntity.ok(userService.updateUser(userRequest));
     }
+
+    @GetMapping(value = "/users")
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        List<UserDTO> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
+    }
+
 }

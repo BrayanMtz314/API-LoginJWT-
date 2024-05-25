@@ -4,6 +4,9 @@ import jakarta.transaction.Transactional; // Revisa si usas la correcta
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -50,6 +53,19 @@ public class UserService {
             return userDTO;
         }
         return null;
+    }
+
+    public List<UserDTO> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users.stream()
+                .map(user -> UserDTO.builder()
+                        .id(user.getId())
+                        .username(user.getUsername())
+                        .firstname(user.getFirstname()
+)                       .lastname(user.getLastname())
+                        .country(user.getCountry())
+                        .build())
+                .collect(Collectors.toList());
     }
 
 
