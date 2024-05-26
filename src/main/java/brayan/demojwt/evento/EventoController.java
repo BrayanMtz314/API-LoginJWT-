@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 @RequestMapping(value = "/api/v1/evento")
@@ -24,5 +26,11 @@ public class EventoController {
     public void deleteById(@RequestBody DeleteRequest request){
         eventoService.eliminarById(request.getId());
     }
+
+    @GetMapping(value = "/eventos")
+    public List<Evento> getEventos(){
+        return eventoService.listaEventos();
+    }
+
 
 }
