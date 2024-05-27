@@ -7,9 +7,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterRequest {
-    String username;
+    String correo;
     String password;
-    String firstname;
-    String lastname;
-    String country;
+    String nombre;
+    String materno;
+    String paterno;
+    int matricula;
+    int rolId;
+    int dependenciaID;
 }

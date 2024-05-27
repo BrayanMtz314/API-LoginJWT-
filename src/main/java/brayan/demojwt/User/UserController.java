@@ -33,10 +33,10 @@ public class UserController {
     }
 
 
-    @PutMapping()
-    public ResponseEntity<UserResponse> updateUser(@RequestBody UserRequest userRequest){
-        return ResponseEntity.ok(userService.updateUser(userRequest));
-    }
+//    @PutMapping()
+//    public ResponseEntity<UserResponse> updateUser(@RequestBody UserRequest userRequest){
+//        return ResponseEntity.ok(userService.updateUser(userRequest));
+//    }
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<UserDTO>> getAllUsers() {

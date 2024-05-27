@@ -1,5 +1,8 @@
 package brayan.demojwt.User;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +15,10 @@ import lombok.NoArgsConstructor;
 public class UserRequest {
     int id;
     String username;
-    String firstname;
-    String lastname;
-    String country;
+    String nombre;
+    String materno;
+    String paterno;
+    int matricula;
+    int dependenciaId;
+
 }

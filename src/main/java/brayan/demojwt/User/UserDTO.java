@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 public class UserDTO {
     int id;
     String username;
-    String firstname;
-    String lastname;
-    String country;
+    String nombre;
+    String materno;
+    String paterno;
+    int matricula;
+    int dependenciaId;
 }
