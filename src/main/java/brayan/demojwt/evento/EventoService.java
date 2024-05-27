@@ -1,5 +1,8 @@
 package brayan.demojwt.evento;
 
+import brayan.demojwt.User.User;
+import brayan.demojwt.User.UserDTO;
+
 import java.util.List;
 
 public interface EventoService {
@@ -14,5 +17,11 @@ public interface EventoService {
     public Evento encontrarEvento(Evento evento);
 
     public Evento eventoById(int id);
+
+    void agregarUsuarioAEvento(int eventoId, int usuarioId);
+
+    List<UserDTO> verUsuariosEnEvento(int eventoId);
+
+
 
 }
