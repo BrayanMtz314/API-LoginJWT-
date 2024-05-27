@@ -41,5 +41,11 @@ public class EventoServiceImpl implements  EventoService{
         eventoRepository.deleteById(id);
     }
 
+    @Override
+    @Transactional
+    public Evento eventoById(int id){
+        return eventoRepository.findById(id).orElse(null);
+    }
+
 
 }

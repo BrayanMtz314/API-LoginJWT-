@@ -22,14 +22,19 @@ public class EventoController {
         return ResponseEntity.ok(evento);
     }
 
-    @PostMapping(value = "/delete/id")
-    public void deleteById(@RequestBody DeleteRequest request){
-        eventoService.eliminarById(request.getId());
+    @GetMapping(value = "/delete/{id}")
+    public void deleteById(@PathVariable int id){
+        eventoService.eliminarById(id);
     }
 
     @GetMapping(value = "/eventos")
     public List<Evento> getEventos(){
         return eventoService.listaEventos();
+    }
+
+    @GetMapping(value = "/{id}")
+    public Evento eventoById(@PathVariable int id ){
+        return eventoService.eventoById(id);
     }
 
 

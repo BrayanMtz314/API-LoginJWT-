@@ -13,4 +13,6 @@ public interface EventoService {
 
     public Evento encontrarEvento(Evento evento);
 
+    public Evento eventoById(int id);
+
 }
